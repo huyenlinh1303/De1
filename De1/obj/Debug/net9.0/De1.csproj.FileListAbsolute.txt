@@ -1,0 +1,14 @@
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\bin\Debug\net9.0\De1.exe
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\bin\Debug\net9.0\De1.deps.json
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\bin\Debug\net9.0\De1.runtimeconfig.json
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\bin\Debug\net9.0\De1.dll
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\bin\Debug\net9.0\De1.pdb
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.AssemblyInfoInputs.cache
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.AssemblyInfo.cs
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.csproj.CoreCompileInputs.cache
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.dll
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\refint\De1.dll
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.pdb
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.genruntimeconfig.cache
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\ref\De1.dll
