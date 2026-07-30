@@ -12,3 +12,4 @@ D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\refint
 D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.pdb
 D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.genruntimeconfig.cache
 D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\ref\De1.dll
+D:\ProgramApps\JetBrains Rider 2026.1.2\Projects\De1\De1\obj\Debug\net9.0\De1.sourcelink.json

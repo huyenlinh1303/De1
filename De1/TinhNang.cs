@@ -13,7 +13,6 @@ public class TinhNang
         {
             string json = File.ReadAllText("data1.json");
             players = JsonSerializer.Deserialize<List<NhanVat>>(json);
-            
         }
     }
 
@@ -31,41 +30,67 @@ public class TinhNang
             string tenNv1 = Console.ReadLine();
             nhanVat.TenNhanVat = tenNv1;
 
-            Console.WriteLine("Chọn loại nhan vat: ");
-            Console.WriteLine("1. Dũng sĩ ");
-            Console.WriteLine("2. Phù Thủy ");
-            Console.WriteLine("3. Vú em ");
-            int loaiNv1 = int.Parse(Console.ReadLine());
-            nhanVat.LoaiNhanVat = loaiNv1;
-            
-            nhanVat.SucTanCong = 0;
-            nhanVat.PhongThu = 0;
-            
-            if (loaiNv1 == 1)
+            while (true)
             {
-                nhanVat.TenLoaiNhanVat = "Dũng sĩ";
-                nhanVat.SucTanCong = 200;
-                nhanVat.PhongThu = 150;
-            }
-            else if (loaiNv1 == 2)
-            {
-                nhanVat.TenLoaiNhanVat = "Phù Thủy";
-                nhanVat.SucTanCong = 150;
-                nhanVat.PhongThu = 200;
-            }
-            else
-            {
-                nhanVat.TenLoaiNhanVat = "Vú em";
-                nhanVat.SucTanCong = 100;
-                nhanVat.PhongThu = 250;
+                try
+                {
+                    Console.WriteLine("Chọn loại nhan vat: ");
+                    Console.WriteLine("1. Dũng sĩ");
+                    Console.WriteLine("2. Phù Thủy");
+                    Console.WriteLine("3. Vú em");
+                    int chonLoaiNhanVat = int.Parse(Console.ReadLine());
+
+                    nhanVat.SucTanCong = 0;
+                    nhanVat.PhongThu = 0;
+
+                    if (chonLoaiNhanVat == 1)
+                    {
+                        nhanVat.LoaiNhanVat = "Dũng sĩ";
+                        nhanVat.SucTanCong = 200;
+                        nhanVat.PhongThu = 150;
+                    }
+                    else if (chonLoaiNhanVat == 2)
+                    {
+                        nhanVat.LoaiNhanVat = "Phù Thủy";
+                        nhanVat.SucTanCong = 150;
+                        nhanVat.PhongThu = 200;
+                    }
+                    else if (chonLoaiNhanVat == 3)
+                    {
+                        nhanVat.LoaiNhanVat = "Vú em";
+                        nhanVat.SucTanCong = 100;
+                        nhanVat.PhongThu = 250;
+                    }
+                    else
+                    {
+                        throw new Exception("Chỉ được chọn từ 1 đến 3.");
+                    }
+
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
             
             //Ban dau em muon để set cấp độ tự động là 1,
             //nhưng ở phía sau có tính năng 'Sắp xếp nhân vật giảm dần
             //theo cấp độ.' nên em nghĩ để người chơi tự set cấp độ ạ.
-            Console.WriteLine("Nhập cấp độ nhân vật"); 
-            int nhapCapDo = int.Parse(Console.ReadLine());
-            nhanVat.CapDo = nhapCapDo;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Nhập cấp độ nhân vật");
+                    int nhapCapDo = int.Parse(Console.ReadLine());
+                    nhanVat.CapDo = nhapCapDo;
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Vui lòng nhập so nguyên!");
+                }
+            }
             
             nhanVat.Mau = 100;
 
@@ -81,7 +106,7 @@ public class TinhNang
         {
             Console.WriteLine($"Mã nhân vật: {nhanVat.MaNhanVat}");
             Console.WriteLine($"Tên nhân vật: {nhanVat.TenNhanVat}");
-            Console.WriteLine($"Loại nhân vật: {nhanVat.TenLoaiNhanVat}");
+            Console.WriteLine($"Loại nhân vật: {nhanVat.LoaiNhanVat}");
             Console.WriteLine($"Cấp độ nhân vật: {nhanVat.CapDo}");
             Console.WriteLine($"Máu nhân vật: {nhanVat.Mau}");
             Console.WriteLine($"Sức tấn công của nhân vật: {nhanVat.SucTanCong}");
@@ -93,7 +118,7 @@ public class TinhNang
     
     public void TimTheoMa()
     {
-        Console.WriteLine("Nhập mã nhân vật muốn tìm: ");
+        Console.WriteLine("Nhập mã nhân vật muốn tìm theo cu phap 'P + thứ tự': ");
         string timMaNhanVat = Console.ReadLine().ToUpper();
 
         NhanVat ketQuaTimKiem = players.Find(x => x.MaNhanVat == timMaNhanVat);
@@ -103,7 +128,7 @@ public class TinhNang
             {
                 Console.WriteLine($"Mã nhân vật: {nhanVat.MaNhanVat}");
                 Console.WriteLine($"Tên nhân vật: {nhanVat.TenNhanVat}");
-                Console.WriteLine($"Loại nhân vật: {nhanVat.TenLoaiNhanVat}");
+                Console.WriteLine($"Loại nhân vật: {nhanVat.LoaiNhanVat}");
                 Console.WriteLine($"Cấp độ nhân vật: {nhanVat.CapDo}");
                 Console.WriteLine($"Máu nhân vật: {nhanVat.Mau}");
                 Console.WriteLine($"Sức tấn công của nhân vật: {nhanVat.SucTanCong}");
@@ -136,7 +161,7 @@ public class TinhNang
             {
                 Console.WriteLine($"Mã nhân vật: {nhanVat.MaNhanVat}");
                 Console.WriteLine($"Tên nhân vật: {nhanVat.TenNhanVat}");
-                Console.WriteLine($"Loại nhân vật: {nhanVat.TenLoaiNhanVat}");
+                Console.WriteLine($"Loại nhân vật: {nhanVat.LoaiNhanVat}");
                 Console.WriteLine($"Cấp độ nhân vật: {nhanVat.CapDo}");
                 Console.WriteLine($"Máu nhân vật: {nhanVat.Mau}");
                 Console.WriteLine($"Sức tấn công của nhân vật: {nhanVat.SucTanCong}");
@@ -168,7 +193,7 @@ public class TinhNang
         {
             Console.WriteLine($"Mã nhân vật: {nhanVat.MaNhanVat}");
             Console.WriteLine($"Tên nhân vật: {nhanVat.TenNhanVat}");
-            Console.WriteLine($"Loại nhân vật: {nhanVat.TenLoaiNhanVat}");
+            Console.WriteLine($"Loại nhân vật: {nhanVat.LoaiNhanVat}");
             Console.WriteLine($"Cấp độ nhân vật: {nhanVat.CapDo}");
             Console.WriteLine($"Máu nhân vật: {nhanVat.Mau}");
             Console.WriteLine($"Sức tấn công của nhân vật: {nhanVat.SucTanCong}");
@@ -203,13 +228,13 @@ public class TinhNang
         int tongSoNhanVat3 = 0;
         for(int i = 0; i < players.Count; i++)
         {
-            if (players[i].LoaiNhanVat == 1)
+            if (players[i].LoaiNhanVat == "Dũng sĩ")
             {
                 tongSoNhanVat1++;
-            }else if (players[i].LoaiNhanVat == 2)
+            }else if (players[i].LoaiNhanVat == "Phù Thủy")
             {
                 tongSoNhanVat2++;
-            }else if (players[i].LoaiNhanVat == 3)
+            }else if (players[i].LoaiNhanVat == "Vú em")
             {
                 tongSoNhanVat3++;
             }
@@ -244,7 +269,7 @@ public class TinhNang
             {
                 Console.WriteLine($"Mã nhân vật: {nhanVat.MaNhanVat}");
                 Console.WriteLine($"Tên nhân vật: {nhanVat.TenNhanVat}");
-                Console.WriteLine($"Loại nhân vật: {nhanVat.TenLoaiNhanVat}");
+                Console.WriteLine($"Loại nhân vật: {nhanVat.LoaiNhanVat}");
                 Console.WriteLine($"Cấp độ nhân vật: {nhanVat.CapDo}");
                 Console.WriteLine($"Máu nhân vật: {nhanVat.Mau}");
                 Console.WriteLine($"Sức tấn công của nhân vật: {nhanVat.SucTanCong}");
